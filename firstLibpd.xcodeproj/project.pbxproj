@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		273C99621A36BF4800AD1E15 /* selfListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 273C99611A36BF4800AD1E15 /* selfListener.m */; };
 		274A11D31A3DDAEA00B9C56D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 274A11D21A3DDAEA00B9C56D /* icon.png */; };
+		2764D4761A48799C0073CF75 /* libpd-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2764D4711A48797F0073CF75 /* libpd-ios.a */; };
 		279A9E821A209662000CEA0B /* backLight6.png in Resources */ = {isa = PBXBuildFile; fileRef = 279A9E7C1A209662000CEA0B /* backLight6.png */; };
 		279A9E831A209662000CEA0B /* backLight5.png in Resources */ = {isa = PBXBuildFile; fileRef = 279A9E7D1A209662000CEA0B /* backLight5.png */; };
 		279A9E841A209662000CEA0B /* backLight4.png in Resources */ = {isa = PBXBuildFile; fileRef = 279A9E7E1A209662000CEA0B /* backLight4.png */; };
@@ -23,7 +24,6 @@
 		27A39C5F19F6468800658DD1 /* tryingViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = 27EA79A419F5169300EF0546 /* tryingViewController.h */; };
 		27A39C6019F6468D00658DD1 /* tryingViewController.m in Resources */ = {isa = PBXBuildFile; fileRef = 27EA79A519F5169300EF0546 /* tryingViewController.m */; };
 		27CCC5691A44306D001328E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27CCC5671A44306D001328E5 /* Main.storyboard */; };
-		27CCC56A1A4430B4001328E5 /* libpd-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EA79CA19F5174F00EF0546 /* libpd-ios.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		27DAE0701A2DBA32009F1D2F /* whiteSl.png in Resources */ = {isa = PBXBuildFile; fileRef = 27DAE06E1A2DBA32009F1D2F /* whiteSl.png */; };
 		27DAE0711A2DBA32009F1D2F /* yellowThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 27DAE06F1A2DBA32009F1D2F /* yellowThumb.png */; };
 		27EA799019F5169300EF0546 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EA798F19F5169300EF0546 /* Foundation.framework */; };
@@ -38,26 +38,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		27A39AA919F623A600658DD1 /* PBXContainerItemProxy */ = {
+		2764D4701A48797F0073CF75 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 27EA79C419F5174F00EF0546 /* libpd.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D;
-			remoteInfo = "libpd-ios";
-		};
-		27EA79C919F5174F00EF0546 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 27EA79C419F5174F00EF0546 /* libpd.xcodeproj */;
+			containerPortal = 2764D46B1A48797E0073CF75 /* libpd.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = D2AAC07E0554694100DB518D;
 			remoteInfo = "libpd-ios";
 		};
-		27EA79CB19F5174F00EF0546 /* PBXContainerItemProxy */ = {
+		2764D4721A48797F0073CF75 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 27EA79C419F5174F00EF0546 /* libpd.xcodeproj */;
+			containerPortal = 2764D46B1A48797E0073CF75 /* libpd.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 119013AB1486450C00086F19;
 			remoteInfo = "libpd-osx";
+		};
+		2764D4741A4879970073CF75 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2764D46B1A48797E0073CF75 /* libpd.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = "libpd-ios";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -65,6 +65,7 @@
 		273C99601A36BF4800AD1E15 /* selfListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = selfListener.h; path = ../selfListener.h; sourceTree = "<group>"; };
 		273C99611A36BF4800AD1E15 /* selfListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = selfListener.m; path = ../selfListener.m; sourceTree = "<group>"; };
 		274A11D21A3DDAEA00B9C56D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../../../../../../Downloads/icon.png; sourceTree = "<group>"; };
+		2764D46B1A48797E0073CF75 /* libpd.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpd.xcodeproj; path = libpd/libpd.xcodeproj; sourceTree = "<group>"; };
 		279A9E7C1A209662000CEA0B /* backLight6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backLight6.png; sourceTree = "<group>"; };
 		279A9E7D1A209662000CEA0B /* backLight5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backLight5.png; sourceTree = "<group>"; };
 		279A9E7E1A209662000CEA0B /* backLight4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backLight4.png; sourceTree = "<group>"; };
@@ -96,7 +97,6 @@
 		27EA79B619F5169300EF0546 /* firstLibpdTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "firstLibpdTests-Info.plist"; sourceTree = "<group>"; };
 		27EA79B819F5169300EF0546 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		27EA79BA19F5169300EF0546 /* firstLibpdTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = firstLibpdTests.m; sourceTree = "<group>"; };
-		27EA79C419F5174F00EF0546 /* libpd.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpd.xcodeproj; path = "../MMASample/pd-for-ios/libpd/libpd.xcodeproj"; sourceTree = "<group>"; };
 		27EA79D219F52CF400EF0546 /* tableTest.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tableTest.pd; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,7 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27CCC56A1A4430B4001328E5 /* libpd-ios.a in Frameworks */,
+				2764D4761A48799C0073CF75 /* libpd-ios.a in Frameworks */,
 				27A39AB119F6246200658DD1 /* AVFoundation.framework in Frameworks */,
 				27A39AAF19F6241C00658DD1 /* AudioToolbox.framework in Frameworks */,
 				27EA799219F5169300EF0546 /* CoreGraphics.framework in Frameworks */,
@@ -117,11 +117,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2764D46C1A48797E0073CF75 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2764D4711A48797F0073CF75 /* libpd-ios.a */,
+				2764D4731A48797F0073CF75 /* libpd-osx.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		27EA798319F5169300EF0546 = {
 			isa = PBXGroup;
 			children = (
+				2764D46B1A48797E0073CF75 /* libpd.xcodeproj */,
 				27EA79D119F52CF400EF0546 /* patch */,
-				27EA79C419F5174F00EF0546 /* libpd.xcodeproj */,
 				27EA799519F5169300EF0546 /* firstLibpd */,
 				27EA79B419F5169300EF0546 /* firstLibpdTests */,
 				27EA798E19F5169300EF0546 /* Frameworks */,
@@ -207,15 +216,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		27EA79C519F5174F00EF0546 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				27EA79CA19F5174F00EF0546 /* libpd-ios.a */,
-				27EA79CC19F5174F00EF0546 /* libpd-osx.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		27EA79D119F52CF400EF0546 /* patch */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,7 +238,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				27A39AAA19F623A600658DD1 /* PBXTargetDependency */,
+				2764D4751A4879970073CF75 /* PBXTargetDependency */,
 			);
 			name = hexpack;
 			productName = firstLibpd;
@@ -273,8 +273,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 27EA79C519F5174F00EF0546 /* Products */;
-					ProjectRef = 27EA79C419F5174F00EF0546 /* libpd.xcodeproj */;
+					ProductGroup = 2764D46C1A48797E0073CF75 /* Products */;
+					ProjectRef = 2764D46B1A48797E0073CF75 /* libpd.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -285,18 +285,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		27EA79CA19F5174F00EF0546 /* libpd-ios.a */ = {
+		2764D4711A48797F0073CF75 /* libpd-ios.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "libpd-ios.a";
-			remoteRef = 27EA79C919F5174F00EF0546 /* PBXContainerItemProxy */;
+			remoteRef = 2764D4701A48797F0073CF75 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		27EA79CC19F5174F00EF0546 /* libpd-osx.a */ = {
+		2764D4731A48797F0073CF75 /* libpd-osx.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "libpd-osx.a";
-			remoteRef = 27EA79CB19F5174F00EF0546 /* PBXContainerItemProxy */;
+			remoteRef = 2764D4721A48797F0073CF75 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -344,10 +344,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		27A39AAA19F623A600658DD1 /* PBXTargetDependency */ = {
+		2764D4751A4879970073CF75 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libpd-ios";
-			targetProxy = 27A39AA919F623A600658DD1 /* PBXContainerItemProxy */;
+			targetProxy = 2764D4741A4879970073CF75 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -384,6 +384,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -396,6 +397,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_PREFIX = "";
@@ -418,8 +420,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_PREFIX_HEADER = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				PROVISIONING_PROFILE = "abe3be43-6dbd-4e28-b954-b704f34c8737";
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "arm64 armv7 armv7s i386";
 			};
 			name = Debug;
 		};
@@ -427,6 +431,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -439,7 +444,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				EXECUTABLE_PREFIX = "";
@@ -455,26 +461,37 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_PREFIX_HEADER = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PROVISIONING_PROFILE = "abe3be43-6dbd-4e28-b954-b704f34c8737";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s i386";
 			};
 			name = Release;
 		};
 		27EA79BF19F5169300EF0546 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "firstLibpd/firstLibpd-Prefix.pch";
 				INFOPLIST_FILE = "firstLibpd/firstLibpd-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = "~/documents/mine/objective-c/libpd_project/hxpk/build/Products/Release-iphoneos/libpd-ios.a/**";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "";
 				"OTHER_CFLAGS[arch=*]" = "-ObjC";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "abe3be43-6dbd-4e28-b954-b704f34c8737";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "../libpd/objc/** ../libpd/** libpd/objc/** libpd/**";
+				VALID_ARCHS = "arm64 armv7 armv7s i386";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -482,19 +499,27 @@
 		27EA79C019F5169300EF0546 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ryusuke katayama (4E5G3846BA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ryusuke katayama (4E5G3846BA)";
+				ENABLE_NS_ASSERTIONS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "firstLibpd/firstLibpd-Prefix.pch";
 				INFOPLIST_FILE = "firstLibpd/firstLibpd-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
+				LIBRARY_SEARCH_PATHS = "~/documents/mine/objective-c/libpd_project/hxpk/build/Products/Release-iphoneos/libpd-ios.a/**";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "";
 				"OTHER_CFLAGS[arch=*]" = "-ObjC";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "abe3be43-6dbd-4e28-b954-b704f34c8737";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "../libpd/objc/** ../libpd/** libpd/objc/** libpd/**";
+				VALID_ARCHS = "arm64 armv7 armv7s i386";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -446,11 +446,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+/*
 -(void)dealloc{
     [dispatcher release];
     [PdBase setDelegate:nil];
     [super dealloc];
 }
-
+*/
 @end

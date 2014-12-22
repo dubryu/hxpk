@@ -20,7 +20,7 @@ static float classValue3;
     self = [super init];
     if (self) {
         label = s;
-        [label retain];
+        //[label retain];
         NSLog(@"loading is success");
     }else{
         NSLog(@"loading the selfListener is failed");
@@ -28,10 +28,6 @@ static float classValue3;
     return self;
 }
 
-
-- (void)receiveBangFromSource:(NSString *)source {
-    NSLog(@"Listener %@: bang\n", label);
-}
 
 - (void)receiveFloat:(float)received fromSource:(NSString *)source{
     if ([source isEqualToString:@"length1"]) {

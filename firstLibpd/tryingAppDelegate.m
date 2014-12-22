@@ -75,12 +75,12 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
+/*
 -(void)dealloc{
     [self.window release];
     [self.viewController release];
     [self.audioController release];
     [super dealloc];
 }
-
+*/
 @end

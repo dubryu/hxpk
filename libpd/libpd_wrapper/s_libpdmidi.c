@@ -5,6 +5,7 @@
 #include "m_pd.h"
 #include "s_stuff.h"
 #include "z_libpd.h"
+#include "z_hooks.h"
 
 #define CLAMP(x, low, high) ((x > high) ? high : ((x < low) ? low : x))
 #define CLAMP4BIT(x) CLAMP(x, 0, 0x0f)
@@ -47,7 +48,7 @@ void outmidi_polyaftertouch(int port, int channel, int pitch, int value) {
 
 void outmidi_byte(int port, int value) {
   if (libpd_midibytehook)
-    libpd_midibytehook(CLAMP12BIT(port), CLAMP8BIT(value));
+    libpd_midibytehook(CLAMP12BIT(port - 1), CLAMP8BIT(value));
 }
 
 // The rest is not relevant to libpd.
