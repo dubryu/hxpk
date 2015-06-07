@@ -211,7 +211,7 @@ void binbuf_gettext(t_binbuf *x, char **bufp, int *lengthp)
         if ((ap->a_type == A_SEMI || ap->a_type == A_COMMA) &&
                 length && buf[length-1] == ' ') length--;
         atom_string(ap, string, MAXPDSTRING);
-        newlength = length + strlen(string) + 1;
+        newlength = length + (int)strlen(string) + 1;
         if (!(newbuf = resizebytes(buf, length, newlength))) break;
         buf = newbuf;
         strcpy(buf + length, string);
@@ -472,7 +472,7 @@ int canvas_getdollarzero( void);
  */
 int binbuf_expanddollsym(char*s, char*buf,t_atom dollar0, int ac, t_atom *av, int tonew)
 {
-  int argno=atol(s);
+  int argno=(int)atol(s);
   int arglen=0;
   char*cs=s;
   char c=*cs;
@@ -810,7 +810,7 @@ int binbuf_read(t_binbuf *b, char *filename, char *dirname, int crflag)
         close(fd);
         return(1);
     }
-    if ((readret = read(fd, buf, length)) < length)
+    if ((readret = (int)read(fd, buf, length)) < length)
     {
         fprintf(stderr, "read (%d %ld) -> %d\n", fd, length, readret);
         perror(namebuf);
@@ -909,7 +909,7 @@ int binbuf_write(t_binbuf *x, char *filename, char *dir, int crflag)
             /* estimate how many characters will be needed.  Printing out
             symbols may need extra characters for inserting backslashes. */
         if (ap->a_type == A_SYMBOL || ap->a_type == A_DOLLSYM)
-            length = 80 + strlen(ap->a_w.w_symbol->s_name);
+            length = 80 + (int)strlen(ap->a_w.w_symbol->s_name);
         else length = 40;
         if (ep - bp < length)
         {
@@ -924,8 +924,8 @@ int binbuf_write(t_binbuf *x, char *filename, char *dir, int crflag)
             bp > sbuf && bp[-1] == ' ') bp--;
         if (!crflag || ap->a_type != A_SEMI)
         {
-            atom_string(ap, bp, (ep-bp)-2);
-            length = strlen(bp);
+            atom_string(ap, bp, (int)(ep-bp)-2);
+            length = (int)strlen(bp);
             bp += length;
             ncolumn += length;
         }
@@ -988,7 +988,7 @@ static t_binbuf *binbuf_convert(t_binbuf *oldb, int maxtopd)
     {
         int endmess, natom;
         char *first, *second, *third;
-        for (endmess = nextindex; endmess < n && vec[endmess].a_type != A_SEMI;
+        for (endmess = (int)nextindex; endmess < n && vec[endmess].a_type != A_SEMI;
             endmess++)
                 ;
         if (endmess == n) break;
@@ -999,7 +999,7 @@ static t_binbuf *binbuf_convert(t_binbuf *oldb, int maxtopd)
             nextindex = endmess + 1;
             continue;
         }
-        natom = endmess - nextindex;
+        natom = endmess - (int)nextindex;
         if (natom > MAXSTACK-10) natom = MAXSTACK-10;
         nextmess = vec + nextindex;
         first = nextmess->a_w.w_symbol->s_name;
@@ -1360,7 +1360,7 @@ static t_binbuf *binbuf_convert(t_binbuf *oldb, int maxtopd)
                         SETFLOAT(outmess + 5, fontsize);
                         outmess[6] = nextmess[4];
                         for (i = 5; i < natom; i++) {
-                            arg = atom_getsymbolarg(i, natom, nextmess);
+                            arg = atom_getsymbolarg((int)i, natom, nextmess);
                             if (arg == gensym("a"))
                                 SETSYMBOL(outmess + i + 2, gensym("l"));
                             else if (arg == gensym("anything"))

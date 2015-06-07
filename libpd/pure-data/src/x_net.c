@@ -179,7 +179,7 @@ static void netsend_send(t_netsend *x, t_symbol *s, int argc, t_atom *argv)
             static double lastwarntime;
             static double pleasewarn;
             double timebefore = sys_getrealtime();
-            int res = send(x->x_fd, bp, length-sent, 0);
+            int res = (int)send(x->x_fd, bp, length-sent, 0);
             double timeafter = sys_getrealtime();
             int late = (timeafter - timebefore > 0.005);
             if (late || pleasewarn)
@@ -271,7 +271,7 @@ static void netreceive_notify(t_netreceive *x, int fd)
 static void netreceive_readbin(t_netreceive *x, int fd)
 {
     unsigned char inbuf[MAXPDSTRING];
-    int ret = recv(fd, inbuf, MAXPDSTRING, 0), i;
+    int ret = (int)recv(fd, inbuf, MAXPDSTRING, 0), i;
     if (!x->x_msgout)
     {
         bug("netreceive_readbin");

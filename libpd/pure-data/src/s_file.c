@@ -247,7 +247,7 @@ static int sys_getpreference(const char *key, char *value, int size)
     FILE *fp = popen(cmdbuf, "r");
     while (nread < size)
     {
-        int newread = fread(value+nread, 1, size-nread, fp);
+        int newread = (int)fread(value+nread, 1, size-nread, fp);
         if (newread <= 0)
             break;
         nread += newread;

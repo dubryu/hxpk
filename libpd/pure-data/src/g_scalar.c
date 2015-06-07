@@ -134,19 +134,19 @@ void glist_scalar(t_glist *glist,
     t_symbol *classname, t_int argc, t_atom *argv)
 {
     t_symbol *templatesym =
-        canvas_makebindsym(atom_getsymbolarg(0, argc, argv));
+        canvas_makebindsym(atom_getsymbolarg(0, (int)argc, argv));
     t_binbuf *b;
     int natoms, nextmsg = 0;
     t_atom *vec;
     if (!template_findbyname(templatesym))
     {
         pd_error(glist, "%s: no such template",
-            atom_getsymbolarg(0, argc, argv)->s_name);
+            atom_getsymbolarg(0, (int)argc, argv)->s_name);
         return;
     }
 
     b = binbuf_new();
-    binbuf_restore(b, argc, argv);
+    binbuf_restore(b, (int)argc, argv);
     natoms = binbuf_getnatom(b);
     vec = binbuf_getvec(b);
     canvas_readscalar(glist, natoms, vec, &nextmsg, 0);

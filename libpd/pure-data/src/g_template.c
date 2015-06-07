@@ -745,7 +745,7 @@ static void fielddesc_setfloat_var(t_fielddesc *fd, t_symbol *s)
     }
     else
     {
-        int cpy = s1 - s->s_name, got;
+        int cpy = s1 - (int)s->s_name, got;
         double v1, v2, screen1, screen2, quantum;
         if (cpy > MAXPDSTRING-5)
             cpy = MAXPDSTRING-5;
@@ -978,7 +978,7 @@ static void *curve_new(t_symbol *classsym, t_int argc, t_atom *argv)
     fielddesc_setfloat_const(&x->x_vis, 1);
     while (1)
     {
-        t_symbol *firstarg = atom_getsymbolarg(0, argc, argv);
+        t_symbol *firstarg = atom_getsymbolarg(0, (int)argc, argv);
         if (!strcmp(firstarg->s_name, "-v") && argc > 1)
         {
             fielddesc_setfloatarg(&x->x_vis, 1, argv+1);
@@ -993,14 +993,14 @@ static void *curve_new(t_symbol *classsym, t_int argc, t_atom *argv)
     }
     x->x_flags = flags;
     if ((flags & CLOSED) && argc)
-        fielddesc_setfloatarg(&x->x_fillcolor, argc--, argv++);
+        fielddesc_setfloatarg(&x->x_fillcolor, (int)argc--, argv++);
     else fielddesc_setfloat_const(&x->x_fillcolor, 0); 
-    if (argc) fielddesc_setfloatarg(&x->x_outlinecolor, argc--, argv++);
+    if (argc) fielddesc_setfloatarg(&x->x_outlinecolor, (int)argc--, argv++);
     else fielddesc_setfloat_const(&x->x_outlinecolor, 0);
-    if (argc) fielddesc_setfloatarg(&x->x_width, argc--, argv++);
+    if (argc) fielddesc_setfloatarg(&x->x_width, (int)argc--, argv++);
     else fielddesc_setfloat_const(&x->x_width, 1);
     if (argc < 0) argc = 0;
-    nxy =  (argc + (argc & 1));
+    nxy =  ((int)argc + (argc & 1));
     x->x_npoints = (nxy>>1);
     x->x_vec = (t_fielddesc *)t_getbytes(nxy * sizeof(t_fielddesc));
     for (i = 0, fd = x->x_vec; i < argc; i++, fd++, argv++)
@@ -1352,7 +1352,7 @@ static void *plot_new(t_symbol *classsym, t_int argc, t_atom *argv)
     fielddesc_setfloat_const(&x->x_scalarvis, 1);
     while (1)
     {
-        t_symbol *firstarg = atom_getsymbolarg(0, argc, argv);
+        t_symbol *firstarg = atom_getsymbolarg(0, (int)argc, argv);
         if (!strcmp(firstarg->s_name, "curve") ||
             !strcmp(firstarg->s_name, "-c"))
         {
@@ -1386,19 +1386,19 @@ static void *plot_new(t_symbol *classsym, t_int argc, t_atom *argv)
         }
         else break;
     }
-    if (argc) fielddesc_setarrayarg(&x->x_data, argc--, argv++);
+    if (argc) fielddesc_setarrayarg(&x->x_data, (int)argc--, argv++);
     else fielddesc_setfloat_const(&x->x_data, 1);
-    if (argc) fielddesc_setfloatarg(&x->x_outlinecolor, argc--, argv++);
+    if (argc) fielddesc_setfloatarg(&x->x_outlinecolor, (int)argc--, argv++);
     else fielddesc_setfloat_const(&x->x_outlinecolor, 0);
-    if (argc) fielddesc_setfloatarg(&x->x_width, argc--, argv++);
+    if (argc) fielddesc_setfloatarg(&x->x_width, (int)argc--, argv++);
     else fielddesc_setfloat_const(&x->x_width, 1);
-    if (argc) fielddesc_setfloatarg(&x->x_xloc, argc--, argv++);
+    if (argc) fielddesc_setfloatarg(&x->x_xloc, (int)argc--, argv++);
     else fielddesc_setfloat_const(&x->x_xloc, 1);
-    if (argc) fielddesc_setfloatarg(&x->x_yloc, argc--, argv++);
+    if (argc) fielddesc_setfloatarg(&x->x_yloc, (int)argc--, argv++);
     else fielddesc_setfloat_const(&x->x_yloc, 1);
-    if (argc) fielddesc_setfloatarg(&x->x_xinc, argc--, argv++);
+    if (argc) fielddesc_setfloatarg(&x->x_xinc, (int)argc--, argv++);
     else fielddesc_setfloat_const(&x->x_xinc, 1);
-    if (argc) fielddesc_setfloatarg(&x->x_style, argc--, argv++);
+    if (argc) fielddesc_setfloatarg(&x->x_style, (int)argc--, argv++);
     else fielddesc_setfloat_const(&x->x_style, defstyle);
     return (x);
 }
@@ -2345,7 +2345,7 @@ static void *drawnumber_new(t_symbol *classsym, t_int argc, t_atom *argv)
     x->x_canvas = canvas_getcurrent();
     while (1)
     {
-        t_symbol *firstarg = atom_getsymbolarg(0, argc, argv);
+        t_symbol *firstarg = atom_getsymbolarg(0, (int)argc, argv);
         if (!strcmp(firstarg->s_name, "-v") && argc > 1)
         {
             fielddesc_setfloatarg(&x->x_vis, 1, argv+1);
@@ -2355,17 +2355,17 @@ static void *drawnumber_new(t_symbol *classsym, t_int argc, t_atom *argv)
     }
         /* next argument is name of field to draw - we don't know its type yet
         but fielddesc_setfloatarg() will do fine here. */
-    x->x_fieldname = atom_getsymbolarg(0, argc, argv);
+    x->x_fieldname = atom_getsymbolarg(0, (int)argc, argv);
     if (argc)
         argc--, argv++;
-    if (argc) fielddesc_setfloatarg(&x->x_xloc, argc--, argv++);
+    if (argc) fielddesc_setfloatarg(&x->x_xloc, (int)argc--, argv++);
     else fielddesc_setfloat_const(&x->x_xloc, 0);
-    if (argc) fielddesc_setfloatarg(&x->x_yloc, argc--, argv++);
+    if (argc) fielddesc_setfloatarg(&x->x_yloc, (int)argc--, argv++);
     else fielddesc_setfloat_const(&x->x_yloc, 0);
-    if (argc) fielddesc_setfloatarg(&x->x_color, argc--, argv++);
+    if (argc) fielddesc_setfloatarg(&x->x_color, (int)argc--, argv++);
     else fielddesc_setfloat_const(&x->x_color, 1);
     if (argc)
-        x->x_label = atom_getsymbolarg(0, argc, argv);
+        x->x_label = atom_getsymbolarg(0, (int)argc, argv);
     else x->x_label = &s_;
 
     return (x);
@@ -2412,7 +2412,7 @@ static void drawnumber_getbuf(t_drawnumber *x, t_word *data,
     {
         strncpy(buf, x->x_label->s_name, DRAWNUMBER_BUFSIZE);
         buf[DRAWNUMBER_BUFSIZE - 1] = 0;
-        nchars = strlen(buf);
+        nchars = (int)strlen(buf);
         if (type == DT_TEXT)
         {
             char *buf2;
@@ -2467,11 +2467,11 @@ static void drawnumber_getrect(t_gobj *z, t_glist *glist,
         startline = newline+1)
     {
         if (newline - startline > width)
-            width = newline - startline;
+            width = newline - (int)startline;
         height++;
     }
     if (strlen(startline) > (unsigned)width)
-        width = strlen(startline);
+        width = (int)strlen(startline);
     *xp1 = xloc;
     *yp1 = yloc;
     *xp2 = xloc + fontwidth * width;

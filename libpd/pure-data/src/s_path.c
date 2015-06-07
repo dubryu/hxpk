@@ -332,7 +332,7 @@ int sys_open_absolute(const char *name, const char* ext,
         int dirlen;
         if (!z)
             return (0);
-        dirlen = z - name;
+        dirlen = z - (int)name;
         if (dirlen > MAXPDSTRING-1) 
             dirlen = MAXPDSTRING-1;
         strncpy(dirbuf, name, dirlen);
@@ -615,7 +615,7 @@ int sys_rcfile(void)
 
 void sys_doflags( void)
 {
-    int i, beginstring = 0, state = 0, len = strlen(sys_flags->s_name);
+    int i, beginstring = 0, state = 0, len = (int)strlen(sys_flags->s_name);
     int rcargc = 0;
     char *rcargv[MAXPDSTRING];
     if (len > MAXPDSTRING)
@@ -728,8 +728,8 @@ void glob_path_dialog(t_pd *dummy, t_symbol *s, int argc, t_atom *argv)
     int i;
     namelist_free(sys_searchpath);
     sys_searchpath = 0;
-    sys_usestdpath = atom_getintarg(0, argc, argv);
-    sys_verbose = atom_getintarg(1, argc, argv);
+    sys_usestdpath = (int)atom_getintarg(0, argc, argv);
+    sys_verbose = (int)atom_getintarg(1, argc, argv);
     for (i = 0; i < argc-2; i++)
     {
         t_symbol *s = sys_decodedialog(atom_getsymbolarg(i+2, argc, argv));
@@ -767,7 +767,7 @@ void glob_startup_dialog(t_pd *dummy, t_symbol *s, int argc, t_atom *argv)
     int i;
     namelist_free(sys_externlist);
     sys_externlist = 0;
-    sys_defeatrt = atom_getintarg(0, argc, argv);
+    sys_defeatrt = (int)atom_getintarg(0, argc, argv);
     sys_flags = sys_decodedialog(atom_getsymbolarg(1, argc, argv));
     for (i = 0; i < argc-2; i++)
     {

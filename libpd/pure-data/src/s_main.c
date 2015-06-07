@@ -222,9 +222,9 @@ void glob_initfromgui(void *dummy, t_symbol *s, int argc, t_atom *argv)
         }
             /* best is now the host font index for the desired font index i. */
         sys_fontlist[i].fi_hostfontsize =
-            atom_getintarg(3 * best + 2, argc, argv);
-        sys_fontlist[i].fi_width = atom_getintarg(3 * best + 3, argc, argv);
-        sys_fontlist[i].fi_height = atom_getintarg(3 * best + 4, argc, argv);
+            (int)atom_getintarg(3 * best + 2, argc, argv);
+        sys_fontlist[i].fi_width = (int)atom_getintarg(3 * best + 3, argc, argv);
+        sys_fontlist[i].fi_height = (int)atom_getintarg(3 * best + 4, argc, argv);
     }
 #if 0
     for (i = 0; i < 6; i++)
@@ -423,7 +423,7 @@ static void sys_parsedevlist(int *np, int *vecp, int max, char *str)
         else
         {
             char *endp;
-            vecp[n] = strtol(str, &endp, 10);
+            vecp[n] = (int)strtol(str, &endp, 10);
             if (endp == str)
                 break;
             n++;

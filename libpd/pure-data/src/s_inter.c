@@ -424,7 +424,7 @@ static int socketreceiver_doread(t_socketreceiver *x)
 static void socketreceiver_getudp(t_socketreceiver *x, int fd)
 {
     char buf[INBUFSIZE+1];
-    int ret = recv(fd, buf, INBUFSIZE, 0);
+    int ret = (int)recv((int)fd, (int)buf, (int)INBUFSIZE, 0);
     if (ret < 0)
     {
         sys_sockerror("recv");
@@ -480,7 +480,7 @@ void socketreceiver_read(t_socketreceiver *x, int fd)
         }
         else
         {
-            ret = recv(fd, x->sr_inbuf + x->sr_inhead,
+            ret = (int)recv(fd, x->sr_inbuf + x->sr_inhead,
                 readto - x->sr_inhead, 0);
             if (ret < 0)
             {
@@ -586,7 +586,7 @@ static void sys_trytogetmoreguibuf(int newsize)
         int written = 0;
         while (1)
         {
-            int res = send(sys_guisock,
+            int res = (int)send(sys_guisock,
                 sys_guibuf + sys_guibuftail + written, bytestowrite, 0);
             if (res < 0)
             {
@@ -667,7 +667,7 @@ static int sys_flushtogui( void)
 {
     int writesize = sys_guibufhead - sys_guibuftail, nwrote = 0;
     if (writesize > 0)
-        nwrote = send(sys_guisock, sys_guibuf + sys_guibuftail, writesize, 0);
+        nwrote = (int)send(sys_guisock, sys_guibuf + sys_guibuftail, writesize, 0);
 
 #if 0   
     if (writesize)
